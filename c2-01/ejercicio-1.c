@@ -1,9 +1,3 @@
-/*
- * Nombre: [José Daniel Valencia Mendinueta]
- * Integrantes: [José Valencia, Jesús Ramírez, Daniel Ibañez]
- * Ejercicio 1: [Ejercicio 1 del taller ESP32]
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -51,4 +45,3 @@ void loop() {
     }
   }
 }
-
