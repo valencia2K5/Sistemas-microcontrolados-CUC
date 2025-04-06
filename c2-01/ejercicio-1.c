@@ -1,30 +1,54 @@
 /*
- * Nombre: [Tu nombre]
- * Integrantes: [Nombres del equipo]
- * Ejercicio 1: [Resumen del enunciado]
+ * Nombre: [José Daniel Valencia Mendinueta]
+ * Integrantes: [José Valencia, Jesús Ramírez, Daniel Ibañez]
+ * Ejercicio 1: [Ejercicio 1 del taller ESP32]
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    printf("Hola mundo\n");
-    return 0;
+// Variables globales para almacenar estadísticas
+int minimo = 100;       // Se inicializa con un número mayor al máximo permitido
+int maximo = -1;        // Se inicializa con un número menor al mínimo permitido
+int ultimo = 0;         // Último número recibido
+int suma = 0;           // Suma acumulada para el promedio
+int cantidad = 0;       // Cantidad de números válidos recibidos
+
+void setup() {
+  Serial.begin(115200); // Iniciar comunicación serial a 115200 baudios
+  Serial.println("Esperando datos entre 0 y 99...");
 }
 
+void loop() {
+  if (Serial.available()) {
+    String entrada = Serial.readStringUntil('\n'); // Leer entrada hasta nueva línea
 
+    entrada.trim(); // Quitar espacios en blanco
+    if (entrada.length() == 0) return; // Ignorar si no hay nada
 
+    // Verificar si es un número válido entre 0 y 99
+    int numero = entrada.toInt();
 
+    // Validar si la entrada es realmente un número entre 0 y 99
+    if (numero >= 0 && numero <= 99 && entrada == String(numero)) {
+      ultimo = numero;
+      if (numero < minimo) minimo = numero;
+      if (numero > maximo) maximo = numero;
 
+      suma += numero;
+      cantidad++;
 
+      float promedio = (float)suma / cantidad;
 
+      // Mostrar resultados
+      Serial.print("Último: "); Serial.print(ultimo);
+      Serial.print(". Mínimo: "); Serial.print(minimo);
+      Serial.print(". Máximo: "); Serial.print(maximo);
+      Serial.print(". Promedio: "); Serial.println(promedio, 2); // 2 decimales
+    } else {
+      // Si no es número válido entre 0 y 99
+      Serial.println("Número inválido. Ingrese un número entre 0 y 99.");
+    }
+  }
+}
 
-
-
-
-
-
-
-
-
-
-Crear carpeta c2-01 y agregar ejercicio-1.c
