@@ -10,3 +10,21 @@ int main() {
     printf("Hola mundo\n");
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Crear carpeta c2-01 y agregar ejercicio-3.c
