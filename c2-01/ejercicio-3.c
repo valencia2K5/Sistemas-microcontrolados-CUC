@@ -26,7 +26,7 @@ Enunciado:
 #define TOQUE_LARGO_MS 3000
 
 // Umbral de lectura que indica si se ha tocado el pin táctil
-#define UMBRAL_TOQUE   30
+#define UMBRAL_TOQUE   120
 
 // Tag para los logs de ESP-IDF
 static const char *TAG = "TOQUE";
