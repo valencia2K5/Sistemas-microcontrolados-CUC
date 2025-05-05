@@ -1,4 +1,4 @@
-Código del Receptor ESP32:
+Código del Receptor ESP32 (LED PWM):
 
 #include <esp_now.h>         // Librería para usar el protocolo ESP-NOW
 #include <WiFi.h>            // Librería para funciones de red Wi-Fi
