@@ -13,12 +13,6 @@ Código del Emisor ESP32 (Potenciómetro):
 
 const float ADC_VOLT_MAX = 3.3;  // Voltaje máximo de referencia del ADC (no se usa directamente aquí)
 
-/*ESP Transmisor 
-MAC:e4:65:b8:47:fc:e8*/
-
-/*ESP RECEPTOR 
-MAC:fc:b4:67:78:c2:d4*/
-
 // Dirección MAC del receptor (peer) a la cual se enviarán los datos
 uint8_t broadcastAddress[] = {0x5C, 0x01, 0x3B, 0x72, 0x58, 0x7C};
 
